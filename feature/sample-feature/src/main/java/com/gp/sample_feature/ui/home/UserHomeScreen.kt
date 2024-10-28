@@ -1,5 +1,6 @@
 package com.gp.sample_feature.ui.home
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -36,9 +37,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.gp.sample_feature.R
-import com.gp.sample_feature.data.util.DateUtils
 import com.gp.sample_feature.domain.model.User
 import com.gp.sample_feature.ui.constants.Dimens
 import com.gp.sample_feature.viewstate.UserHomeViewState
@@ -104,10 +105,11 @@ fun UserListItemCard(
     navigateToUserDetails: () -> Unit
 ) {
     Card(
-        modifier = Modifier.padding(horizontal = Dimens.padding_16, vertical = Dimens.padding_4),
+        modifier = Modifier.padding(horizontal = Dimens.padding_8, vertical = Dimens.padding_4),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
-        )
+        ),
+        border = BorderStroke(1.dp, Color.Black),
     ) {
         Column(
             modifier = Modifier
@@ -151,7 +153,7 @@ fun UserListItemCard(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = DateUtils.parseAndFormatTimestamp(user.email),
+                            text = user.email,
                             fontSize = Dimens.font_size_12,
                             color = Color.Gray,
                             fontWeight = FontWeight.Bold
@@ -160,16 +162,16 @@ fun UserListItemCard(
 
                     Spacer(modifier = Modifier.height(Dimens.padding_8))
                 }
-            }
 
-            Row {
-                Text(
-                    text = user.phoneNumber,
-                    fontSize = Dimens.font_size_14,
-                    color = Color.Gray,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
+                Column {
+                    Text(
+                        text = user.phoneNumber,
+                        fontSize = Dimens.font_size_14,
+                        color = Color.Gray,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
             }
         }
     }

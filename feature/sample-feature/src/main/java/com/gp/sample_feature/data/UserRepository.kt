@@ -14,25 +14,29 @@ class UserRepositoryImpl @Inject constructor() : UserRepository {
             id = UUID.randomUUID().toString(),
             username = "dog_lover1234",
             email = "chris@aol.com",
-            phoneNumber = "831-213-4124"
+            phoneNumber = "831-213-4124",
+            description = "Sample Description ".repeat(40)
         ),
         User(
             id = UUID.randomUUID().toString(),
             username = "steve91",
             email = "steve@aol.com",
-            phoneNumber = "901-213-4112"
+            phoneNumber = "901-213-4112",
+            description = "Sample Description ".repeat(40)
         ),
         User(
             id = UUID.randomUUID().toString(),
             username = "hiking90",
             email = "richard@aol.com",
-            phoneNumber = "312-412-4212"
+            phoneNumber = "312-412-4212",
+            description = "Sample Description ".repeat(40)
         ),
         User(
             id = UUID.randomUUID().toString(),
             username = "home_design31",
-            email = "luis@aol.com",
-            phoneNumber = "703-122-2411"
+            email = "bob@aol.com",
+            phoneNumber = "703-122-2411",
+            description = "Sample Description ".repeat(40)
         )
     )
 
