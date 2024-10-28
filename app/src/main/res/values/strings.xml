@@ -1,0 +1,4 @@
+<resources>
+    <string name="navigation_demo_title">Navigation Demo</string>
+    <string name="navigation_back_content_description">Back</string>
+</resources>
